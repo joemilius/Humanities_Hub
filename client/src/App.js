@@ -7,16 +7,19 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route></Route>
+        <Route path="/"/>
       </Switch>
       <Switch>
-        <Route></Route>
+        <Route path="movie-list"/>
       </Switch>
       <Switch>
-        <Route></Route>
+        <Route path="music-list"/>
       </Switch>
       <Switch>
-        <Route></Route>
+        <Route path="book-list"/>
+      </Switch>
+      <Switch>
+        <Route path="activity-list"/>
       </Switch>
     </Router>
   );
