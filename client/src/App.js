@@ -1,6 +1,10 @@
 import React from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Navbar from './NavBar'
+import MovieList from './MovieList/MovieList'
+import BookList from './BookList/BookList'
+import MusicList from './MusicList/MusicList'
+import ActivityList from './ActivityList/ActivityList'
 import logo from './logo.svg';
 import './App.css';
 
