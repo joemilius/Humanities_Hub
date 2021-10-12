@@ -1,6 +1,6 @@
 import React from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import Navbar from './NavBar'
+import NavBar from './NavBar'
 import Home from './Home'
 import MovieList from './MovieList/MovieList'
 import BookList from './BookList/BookList'
@@ -12,7 +12,7 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <NavBar/>
+      <NavBar />
       <Switch>
         <Route path="/" exact component={<Home/>}/>
       </Switch>
