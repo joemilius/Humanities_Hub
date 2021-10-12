@@ -1,6 +1,7 @@
 import React from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Navbar from './NavBar'
+import Home from './Home'
 import MovieList from './MovieList/MovieList'
 import BookList from './BookList/BookList'
 import MusicList from './MusicList/MusicList'
@@ -13,7 +14,7 @@ function App() {
     <Router>
       <NavBar/>
       <Switch>
-        <Route path="/" exact/>
+        <Route path="/" exact component={<Home/>}/>
       </Switch>
       <Switch>
         <Route path="movie-list" exact component={<MovieList/>}/>
