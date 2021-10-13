@@ -1,10 +1,12 @@
 import React from 'react'
+import Form from 'react-bootstrap'
 
 const Home = () => {
     return (
-        <div>
-            
-        </div>
+        <Form>
+            <Form.Label></Form.Label>
+            <Form.Control classname='inputbox'></Form.Control>
+        </Form>
     )
 }
 
