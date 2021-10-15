@@ -3,10 +3,20 @@ import Form from 'react-bootstrap'
 
 const Home = () => {
     return (
+        <div>
         <Form>
-            <Form.Label></Form.Label>
+            <Form.Label>Movie Search</Form.Label>
             <Form.Control classname='inputbox'></Form.Control>
         </Form>
+        <Form>
+            <Form.Label>Music Search</Form.Label>
+            <Form.Control classname='inputbox'></Form.Control>
+        </Form>
+        <Form>
+            <Form.Label>Book Search</Form.Label>
+            <Form.Control classname='inputbox'></Form.Control>
+        </Form>
+        </div>
     )
 }
 
