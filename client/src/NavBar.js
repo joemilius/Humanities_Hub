@@ -9,6 +9,12 @@ const NavBar = () => {
                 <NavBar.Brand>
                     <NavLink classname="navlinks" to="/"><h2 classname="brand-text">HumanitiesHub</h2></NavLink>
                 </NavBar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="me-auto">
+                </Nav>
+                </Navbar.Collapse>
+
             </Container>
         </NavBar>
     )
