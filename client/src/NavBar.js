@@ -15,6 +15,18 @@ const NavBar = () => {
                     <Nav.Link classname="navbarclicks">
                         <NavLink classname="navlinks" to="/">Home</NavLink>
                     </Nav.Link>
+                    <Nav.Link classname="navbarclicks">
+                        <NavLink classname="navlinks" to="/movielist">Movies</NavLink>
+                    </Nav.Link>
+                    <Nav.Link classname="navbarclicks">
+                        <NavLink classname="navlinks" to="/musiclist">Music</NavLink>
+                    </Nav.Link>
+                    <Nav.Link classname="navbarclicks">
+                        <NavLink classname="navlinks" to="/booklist">Books</NavLink>
+                    </Nav.Link>
+                    <Nav.Link classname="navbarclicks">
+                        <NavLink classname="navlinks" to="/activitylist">Activities</NavLink>
+                    </Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
 
