@@ -16,16 +16,16 @@ const NavBar = () => {
                         <NavLink classname="navlinks" to="/">Home</NavLink>
                     </Nav.Link>
                     <Nav.Link classname="navbarclicks">
-                        <NavLink classname="navlinks" to="/movielist">Movies</NavLink>
+                        <NavLink classname="navlinks" to="/movie-list">Movies</NavLink>
                     </Nav.Link>
                     <Nav.Link classname="navbarclicks">
-                        <NavLink classname="navlinks" to="/musiclist">Music</NavLink>
+                        <NavLink classname="navlinks" to="/music-list">Music</NavLink>
                     </Nav.Link>
                     <Nav.Link classname="navbarclicks">
-                        <NavLink classname="navlinks" to="/booklist">Books</NavLink>
+                        <NavLink classname="navlinks" to="/book-list">Books</NavLink>
                     </Nav.Link>
                     <Nav.Link classname="navbarclicks">
-                        <NavLink classname="navlinks" to="/activitylist">Activities</NavLink>
+                        <NavLink classname="navlinks" to="/activity-list">Activities</NavLink>
                     </Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
