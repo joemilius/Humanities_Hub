@@ -26,11 +26,20 @@ const Home = () => {
         .then(response => response.json)
         .then(data => console.log(data))
     }
+
+    function bookSearch(event){
+        event.preventDefault()
+        setBookQuery(event.target.value)
+
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${event.target.value}&filter&key=yourAPIKey`)
+        .then(response => response.json)
+        .then(data => console.log(data))
+    }
     return (
         <div>
         <Form>
             <Form.Label>Movie Search</Form.Label>
-            <Form.Control classname='inputbox' onChange={}></Form.Control>
+            <Form.Control classname='inputbox' onChange={movieSearch}></Form.Control>
         </Form>
         <Form>
             <Form.Label>Music Search</Form.Label>
@@ -38,7 +47,7 @@ const Home = () => {
         </Form>
         <Form>
             <Form.Label>Book Search</Form.Label>
-            <Form.Control classname='inputbox' onChange={}></Form.Control>
+            <Form.Control classname='inputbox' onChange={bookSearch}></Form.Control>
         </Form>
         </div>
     )
