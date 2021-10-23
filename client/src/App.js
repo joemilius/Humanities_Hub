@@ -5,7 +5,7 @@ import Home from './Home'
 import MovieList from './MovieList/MovieList'
 import BookList from './BookList/BookList'
 import MusicList from './MusicList/MusicList'
-import ActivityHome from './ActivityList/ActivityHome'
+import ActivityHome from './Activities/ActivityHome'
 import logo from './logo.svg';
 import './App.css';
 

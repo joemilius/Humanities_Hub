@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import Form from 'react-bootstrap'
+import {Form} from 'react-bootstrap'
 
 const Home = () => {
     const [movieQuery, setMovieQuery] = useState('')
