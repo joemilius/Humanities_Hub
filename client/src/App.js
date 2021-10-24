@@ -6,7 +6,6 @@ import MovieList from './MovieList/MovieList'
 import BookList from './BookList/BookList'
 import MusicList from './MusicList/MusicList'
 import ActivityHome from './Activities/ActivityHome'
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -14,19 +13,19 @@ function App() {
     <Router>
       <NavBar />
       <Switch>
-        <Route path="/" exact component={<Home/>}/>
+        <Route path="/" exact component={() => <Home/>}/>
       </Switch>
       <Switch>
-        <Route path="movie-list" exact component={<MovieList/>}/>
+        <Route path="/movie-list" exact component={() => <MovieList/>}/>
       </Switch>
       <Switch>
-        <Route path="music-list" exact component={<MusicList/>}/>
+        <Route path="/music-list" exact component={() => <MusicList/>}/>
       </Switch>
       <Switch>
-        <Route path="book-list" exact component={<BookList/>}/>
+        <Route path="/book-list" exact component={() => <BookList/>}/>
       </Switch>
       <Switch>
-        <Route path="activity-list" exact component={<ActivityHome/>}/>
+        <Route path="/activity-list" exact component={() => <ActivityHome/>}/>
       </Switch>
     </Router>
   );

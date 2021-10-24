@@ -10,12 +10,14 @@ const Home = () => {
     const [bookResults, setBookResults] = useState([])
 
     function movieSearch(event){
-        e.preventDefault()
-        setQuery( e.target.value )
+        event.preventDefault()
+        setMovieQuery(event.target.value)
     
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${ process.env.TMDB_API_KEY }&language=en-US&page=1&include_adult=false&query=${e.target.value}`)
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${ process.env.TMDB_API_KEY }&language=en-US&page=1&include_adult=false&query=${event.target.value}`)
     .then(resp => resp.json())
-    .then(data => setMovieResults(data.results))
+    .then(data => {
+        console.log(data)
+        setMovieResults(data.results)})
     }
 
     function musicSearch(event){
@@ -31,7 +33,7 @@ const Home = () => {
         event.preventDefault()
         setBookQuery(event.target.value)
 
-        fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${event.target.value}&filter&key=yourAPIKey`)
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${event.target.value}&filter&key=${process.env.GOOGLE_BOOKS_API_KEY}`)
         .then(response => response.json)
         .then(data => console.log(data))
     }
