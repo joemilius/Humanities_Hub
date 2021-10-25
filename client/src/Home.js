@@ -13,7 +13,7 @@ const Home = () => {
         event.preventDefault()
         setMovieQuery(event.target.value)
     
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${ process.env.TMDB_API_KEY }&language=en-US&page=1&include_adult=false&query=${event.target.value}`)
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&page=1&include_adult=false&query=${event.target.value}`)
     .then(resp => resp.json())
     .then(data => {
         console.log(data)
@@ -33,25 +33,25 @@ const Home = () => {
         event.preventDefault()
         setBookQuery(event.target.value)
 
-        fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${event.target.value}&filter&key=${process.env.GOOGLE_BOOKS_API_KEY}`)
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${event.target.value}&key=${process.env.REACT_APP_GOOGLE_BOOKS_API_KEY}`)
         .then(response => response.json())
         .then(data => console.log(data))
     }
     return (
-        <div>
         <Form>
+        <Form.Group>
             <Form.Label>Movie Search</Form.Label>
-            <Form.Control classname='inputbox' onChange={movieSearch}></Form.Control>
-        </Form>
-        <Form>
+            <Form.Control className='inputbox' onChange={movieSearch}></Form.Control>
+        </Form.Group>
+        <Form.Group>
             <Form.Label>Music Search</Form.Label>
-            <Form.Control classname='inputbox' onChange={musicSearch}></Form.Control>
-        </Form>
-        <Form>
+            <Form.Control className='inputbox' onChange={musicSearch}></Form.Control>
+        </Form.Group>
+        <Form.Group>
             <Form.Label>Book Search</Form.Label>
-            <Form.Control classname='inputbox' onChange={bookSearch}></Form.Control>
+            <Form.Control className='inputbox' onChange={bookSearch}></Form.Control>
+        </Form.Group>
         </Form>
-        </div>
     )
 }
 
