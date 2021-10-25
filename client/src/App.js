@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import NavBar from './NavBar'
 import Home from './Home'
@@ -9,6 +9,9 @@ import ActivityHome from './Activities/ActivityHome'
 import './App.css';
 
 function App() {
+  const [movieList, setMovieList] = useState([])
+  const [musicList, setMusicList] = useState([])
+  const [bookList, setBookList] = useState([])
   return (
     <Router>
       <NavBar />

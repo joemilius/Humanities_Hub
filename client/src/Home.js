@@ -8,6 +8,7 @@ const Home = () => {
     const [movieResults, setMovieResults] = useState([])
     const [musicResults, setMusicResults] = useState([])
     const [bookResults, setBookResults] = useState([])
+    
 
     function movieSearch(event){
         event.preventDefault()
