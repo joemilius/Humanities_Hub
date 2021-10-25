@@ -24,7 +24,7 @@ const Home = () => {
         event.preventDefault()
         setMusicQuery(event.target.value)
 
-        fetch(`theaudiodb.com/api/v1/json/1/search.php?s=${event.target.value}`)
+        fetch(`https://theaudiodb.com/api/v1/json/1/search.php?s=${event.target.value}`)
         .then(response => response.json())
         .then(data => console.log(data))
     }
