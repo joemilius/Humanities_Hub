@@ -25,7 +25,7 @@ const Home = () => {
         setMusicQuery(event.target.value)
 
         fetch(`theaudiodb.com/api/v1/json/1/search.php?s=${event.target.value}`)
-        .then(response => response.json)
+        .then(response => response.json())
         .then(data => console.log(data))
     }
 
@@ -34,7 +34,7 @@ const Home = () => {
         setBookQuery(event.target.value)
 
         fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${event.target.value}&filter&key=${process.env.GOOGLE_BOOKS_API_KEY}`)
-        .then(response => response.json)
+        .then(response => response.json())
         .then(data => console.log(data))
     }
     return (
