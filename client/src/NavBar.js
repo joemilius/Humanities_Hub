@@ -1,10 +1,11 @@
 import React from 'react'
-import {Navbar, Container, Nav} from 'react-bootstrap'
+import Navbar from 'react-bootstrap/Navbar'
+import {Container, Nav} from 'react-bootstrap'
 import {NavLink} from 'react-router-dom'
 
 const NavBar = () => {
     return (
-        <Navbar className="navbar" bg="light" expand="lg" variant="primary">
+        <Navbar className="navbar-static-top" bg="light" expand="lg" variant="primary">
             <Container>
                 <Navbar.Brand>
                     <NavLink className="navlinks" to="/"><h2 className="brand-text">HumanitiesHub</h2></NavLink>
