@@ -7,6 +7,14 @@ const SignUpForm = () => {
             <Form.Group>
                 <Form.Label></Form.Label>
                 <Form.Control></Form.Control>
+                <Form.Label></Form.Label>
+                <Form.Control></Form.Control>
+                <Form.Label></Form.Label>
+                <Form.Control></Form.Control>
+                <Form.Label></Form.Label>
+                <Form.Control></Form.Control>
+                <Form.Label></Form.Label>
+                <Form.Control></Form.Control>
             </Form.Group>
         </Form>
     )

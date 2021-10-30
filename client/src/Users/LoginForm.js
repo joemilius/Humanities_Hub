@@ -5,8 +5,10 @@ const LoginForm = () => {
     return (
         <Form>
             <Form.Group>
+                <Form.Label>Username</Form.Label>
+                <Form.Control className="inputbox" name="username" value={}></Form.Control>
                 <Form.Label></Form.Label>
-                <Form.Control></Form.Control>
+                <Form.Control className="inputBox" type="password" name="password" value={}></Form.Control>
             </Form.Group>
         </Form>
     )
