@@ -18,7 +18,7 @@ const SignUpForm = () => {
 
 
     return (
-        <Form>
+        <Form onSubmit={}>
             <Form.Group>
                 <Form.Label>First Name</Form.Label>
                 <Form.Control classname="inputbox" name="first_name" onChange={handleSignup}></Form.Control>
