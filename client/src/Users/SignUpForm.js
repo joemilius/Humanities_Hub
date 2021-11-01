@@ -9,6 +9,8 @@ const SignUpForm = () => {
         email: '',
         password: ''
     })
+
+    
     return (
         <Form>
             <Form.Group>
