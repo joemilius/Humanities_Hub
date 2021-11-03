@@ -1,9 +1,8 @@
-class CreateMovies < ActiveRecord::Migration[6.1]
+class CreateMusics < ActiveRecord::Migration[6.1]
   def change
-    create_table :movies do |t|
-      t.string :title
+    create_table :musics do |t|
+      t.string :artist_name
       t.string :image
-      t.int :year
       t.string :description
       t.int :likes
       t.int :dislikes
