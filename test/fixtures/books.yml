@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  image: MyString
+  description: MyString
+  likes: 
+  dislikes: 
+  group: one
+
+two:
+  title: MyString
+  image: MyString
+  description: MyString
+  likes: 
+  dislikes: 
+  group: two
