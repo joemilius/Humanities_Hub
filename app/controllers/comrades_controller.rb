@@ -1,2 +1,0 @@
-class ComradesController < ApplicationController
-end
