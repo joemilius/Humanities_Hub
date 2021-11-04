@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :activities
   resources :books
   resources :musics
   resources :movies
