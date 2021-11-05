@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :invitations
   resources :book_comments
   resources :music_comments
   resources :movie_comments
