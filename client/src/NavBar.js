@@ -16,6 +16,9 @@ const NavBar = () => {
                         <Nav.Link className="navbarclicks">
                             <NavLink className="navlinks" to="/">Home</NavLink>
                         </Nav.Link>
+                        <NavDropdown title="Link" id="navbarScrollingDropdown">
+                            <NavDropdown.Item to="/group">Group</NavDropdown.Item>
+                        </NavDropdown>
                         <Nav.Link className="navbarclicks">
                             <NavLink className="navlinks" to="/movie-list">Movies</NavLink>
                         </Nav.Link>
