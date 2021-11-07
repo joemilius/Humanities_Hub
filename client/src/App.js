@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import NavBar from './NavBar'
-import Home from './Home'
+import UserHome from './Users/UserHome'
+import GroupHome from './GroupHome'
 import MovieList from './MovieList/MovieList'
 import BookList from './BookList/BookList'
 import MusicList from './MusicList/MusicList'
@@ -16,7 +17,10 @@ function App() {
     <Router>
       <NavBar />
       <Switch>
-        <Route path="/" exact component={() => <Home/>}/>
+        <Route path="/" exact component={() => <UserHome/>}/>
+      </Switch>
+      <Switch>
+        <Route path="/group" exact component={() => <GroupHome/>}/>
       </Switch>
       <Switch>
         <Route path="/movie-list" exact component={() => <MovieList/>}/>
