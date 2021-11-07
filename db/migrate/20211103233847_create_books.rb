@@ -5,8 +5,8 @@ class CreateBooks < ActiveRecord::Migration[6.1]
       t.string :author
       t.string :image
       t.string :description
-      t.int :likes
-      t.int :dislikes
+      t.integer :likes
+      t.integer :dislikes
       t.references :group, null: false, foreign_key: true
 
       t.timestamps
