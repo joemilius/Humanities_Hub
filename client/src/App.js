@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import NavBar from './NavBar'
+import LoginPage from './Users/LoginPage'
 import UserHome from './Users/UserHome'
 import GroupHome from './GroupHome'
 import MovieList from './MovieList/MovieList'
@@ -41,7 +42,7 @@ function App() {
     <Router>
       <NavBar user={user} showSignUp={showSignUp} setShowSignUp={setShowSignUp} handleLogOut={handleLogout}/>
       {!user ?
-      <LoginPage />
+      <LoginPage showSignUp={showSignUp} setShowSignUp={setShowSignUp}/>
       :
       <>
       <Switch>
