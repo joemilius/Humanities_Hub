@@ -10,12 +10,40 @@ import ActivityHome from './Activities/ActivityHome'
 import './App.css';
 
 function App() {
+  const [user, setUser] = useState([])
   const [movieList, setMovieList] = useState([])
   const [musicList, setMusicList] = useState([])
   const [bookList, setBookList] = useState([])
+  const [showSignup, setShowSignUp] = useState(false)
+
+  useEffect(() => {
+    fetch("/me")
+    .then((resp) => {
+      if (resp.ok) {
+        resp.json().then((user) => {
+          setUser(user)
+        });
+      }
+    })
+  }, []);
+
+  function handleLogout() {
+    fetch("/logout", { 
+      method: "DELETE"})
+      .then((resp) => {
+      if (resp.ok) {
+        setUser(null);
+      }
+    })
+  }
+
   return (
     <Router>
-      <NavBar />
+      <NavBar user={user} showSignUp={showSignUp} setShowSignUp={setShowSignUp} handleLogOut={handleLogout}/>
+      {!user ?
+      <LoginPage />
+      :
+      <>
       <Switch>
         <Route path="/" exact component={() => <UserHome/>}/>
       </Switch>
@@ -34,7 +62,10 @@ function App() {
       <Switch>
         <Route path="/activity-list" exact component={() => <ActivityHome/>}/>
       </Switch>
+      </>
+      }
     </Router>
+
   );
 }
 
