@@ -35,7 +35,7 @@ const NavBar = () => {
                     {user ?
                     <Button classname='ms-auto' variant='flat' to='' onClick={}>Login</Button>
                     :
-                    <Button classname='ms-auto' variant='flat' to='' onClick={}>Login</Button>
+                    <Button classname='ms-auto' variant='flat' to='' onClick={}>Logout</Button>
                     }
                 </Navbar.Collapse>
             </Container>

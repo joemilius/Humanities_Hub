@@ -10,12 +10,26 @@ import ActivityHome from './Activities/ActivityHome'
 import './App.css';
 
 function App() {
+  const [user, setUser] = useState([])
   const [movieList, setMovieList] = useState([])
   const [musicList, setMusicList] = useState([])
   const [bookList, setBookList] = useState([])
+
+  useEffect(() => {
+    fetch("/me")
+    .then((resp) => {
+      if (resp.ok) {
+        resp.json().then((user) => {
+          setUser(user)
+        });
+      }
+    })
+  }, []);
+  
   return (
     <Router>
       <NavBar />
+
       <Switch>
         <Route path="/" exact component={() => <UserHome/>}/>
       </Switch>
