@@ -1,9 +1,9 @@
 import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
-import {Container, Nav} from 'react-bootstrap'
+import {Container, Nav, Button} from 'react-bootstrap'
 import {NavLink} from 'react-router-dom'
 
-const NavBar = () => {
+const NavBar = ({user, handleLogout}) => {
     return (
         <Navbar className="navbar-static-top" bg="light" expand="lg" variant="primary">
             <Container>
@@ -35,7 +35,7 @@ const NavBar = () => {
                     {user ?
                     <Button classname='ms-auto' variant='flat' to='' onClick={}>Login</Button>
                     :
-                    <Button classname='ms-auto' variant='flat' to='' onClick={}>Logout</Button>
+                    <Button classname='ms-auto' variant='flat' to='' onClick={handleLogout}>Logout</Button>
                     }
                 </Navbar.Collapse>
             </Container>

@@ -25,11 +25,24 @@ function App() {
       }
     })
   }, []);
-  
+
+  function handleLogout() {
+    fetch("/logout", { 
+      method: "DELETE"})
+      .then((resp) => {
+      if (resp.ok) {
+        setUser(null);
+      }
+    })
+  }
+
   return (
     <Router>
-      <NavBar />
-
+      <NavBar user={user} handleLogOut={handleLogout}/>
+      {!user ?
+      <LoginPage />
+      :
+      <>
       <Switch>
         <Route path="/" exact component={() => <UserHome/>}/>
       </Switch>
@@ -48,7 +61,10 @@ function App() {
       <Switch>
         <Route path="/activity-list" exact component={() => <ActivityHome/>}/>
       </Switch>
+      </>
+      }
     </Router>
+
   );
 }
 
