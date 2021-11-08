@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Form from 'react-bootstrap'
 
-const LoginForm = () => {
+const LoginForm = ({}) => {
     const {loginData, setLoginData} = useState({
         username: '',
         password: ''
@@ -22,6 +22,7 @@ const LoginForm = () => {
                 <Form.Control className="inputBox" type="password" name="password" value={loginData.password} onChange={handleLogin}></Form.Control>
             </Form.Group>
             <Button variant='custom' type='submit'>Login</Button>
+            <Button variant='custom' onClick={()=> setShowSignUp(true)}>Sign Up</Button>
         </Form>
     )
 }
