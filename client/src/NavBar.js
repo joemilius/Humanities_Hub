@@ -3,7 +3,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import {Container, Nav, Button} from 'react-bootstrap'
 import {NavLink} from 'react-router-dom'
 
-const NavBar = ({user, handleLogout}) => {
+const NavBar = ({user, showSignup, setShowSignup, handleLogout}) => {
     return (
         <Navbar className="navbar-static-top" bg="light" expand="lg" variant="primary">
             <Container>
@@ -33,9 +33,9 @@ const NavBar = ({user, handleLogout}) => {
                         </Nav.Link>
                     </Nav>
                     {user ?
-                    <Button classname='ms-auto' variant='flat' to='' onClick={}>Login</Button>
+                    <Button classname='ms-auto' variant='flat' to='' onClick={() => setShowSignup(false)}>Login</Button>
                     :
-                    <Button classname='ms-auto' variant='flat' to='' onClick={handleLogout}>Logout</Button>
+                    <Button classname='ms-auto' variant='flat' onClick={handleLogout}>Logout</Button>
                     }
                 </Navbar.Collapse>
             </Container>

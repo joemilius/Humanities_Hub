@@ -14,6 +14,7 @@ function App() {
   const [movieList, setMovieList] = useState([])
   const [musicList, setMusicList] = useState([])
   const [bookList, setBookList] = useState([])
+  const [showSignup, setShowSignUp] = useState(false)
 
   useEffect(() => {
     fetch("/me")
@@ -38,7 +39,7 @@ function App() {
 
   return (
     <Router>
-      <NavBar user={user} handleLogOut={handleLogout}/>
+      <NavBar user={user} showSignUp={showSignUp} setShowSignUp={setShowSignUp} handleLogOut={handleLogout}/>
       {!user ?
       <LoginPage />
       :
