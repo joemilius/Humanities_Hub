@@ -32,6 +32,11 @@ const NavBar = () => {
                             <NavLink className="navlinks" to="/activity-list">Activities</NavLink>
                         </Nav.Link>
                     </Nav>
+                    {user ?
+                    <Button classname='ms-auto' variant='flat' to='' onClick={}>Login</Button>
+                    :
+                    <Button classname='ms-auto' variant='flat' to='' onClick={}>Login</Button>
+                    }
                 </Navbar.Collapse>
             </Container>
         </Navbar>
