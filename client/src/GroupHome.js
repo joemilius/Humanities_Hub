@@ -27,7 +27,9 @@ const Home = () => {
 
         fetch(`https://theaudiodb.com/api/v1/json/1/search.php?s=${event.target.value}`)
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data)
+            setMusicResults(data)})
     }
 
     function bookSearch(event){
@@ -36,7 +38,9 @@ const Home = () => {
 
         fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${event.target.value}&key=${process.env.REACT_APP_GOOGLE_BOOKS_API_KEY}`)
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data)
+            setBookResults(data)})
     }
     return (
         <Form>
