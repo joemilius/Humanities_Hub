@@ -27,7 +27,9 @@ const Home = () => {
 
         fetch(`https://theaudiodb.com/api/v1/json/1/search.php?s=${event.target.value}`)
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data)
+            setMusicResults(data)})
     }
 
     function bookSearch(event){
@@ -36,21 +38,23 @@ const Home = () => {
 
         fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${event.target.value}&key=${process.env.REACT_APP_GOOGLE_BOOKS_API_KEY}`)
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data)
+            setBookResults(data)})
     }
     return (
         <Form>
         <Form.Group>
             <Form.Label>Movie Search</Form.Label>
-            <Form.Control className='inputbox' onChange={movieSearch}></Form.Control>
+            <Form.Control className='inputbox' value={movieQuery} onChange={movieSearch}></Form.Control>
         </Form.Group>
         <Form.Group>
             <Form.Label>Music Search</Form.Label>
-            <Form.Control className='inputbox' onChange={musicSearch}></Form.Control>
+            <Form.Control className='inputbox' value={musicQuery} onChange={musicSearch}></Form.Control>
         </Form.Group>
         <Form.Group>
             <Form.Label>Book Search</Form.Label>
-            <Form.Control className='inputbox' onChange={bookSearch}></Form.Control>
+            <Form.Control className='inputbox' value={bookQuery} onChange={bookSearch}></Form.Control>
         </Form.Group>
         </Form>
     )
