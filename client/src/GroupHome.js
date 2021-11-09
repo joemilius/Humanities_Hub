@@ -46,15 +46,15 @@ const Home = () => {
         <Form>
         <Form.Group>
             <Form.Label>Movie Search</Form.Label>
-            <Form.Control className='inputbox' onChange={movieSearch}></Form.Control>
+            <Form.Control className='inputbox' value={movieQuery} onChange={movieSearch}></Form.Control>
         </Form.Group>
         <Form.Group>
             <Form.Label>Music Search</Form.Label>
-            <Form.Control className='inputbox' onChange={musicSearch}></Form.Control>
+            <Form.Control className='inputbox' value={musicQuery} onChange={musicSearch}></Form.Control>
         </Form.Group>
         <Form.Group>
             <Form.Label>Book Search</Form.Label>
-            <Form.Control className='inputbox' onChange={bookSearch}></Form.Control>
+            <Form.Control className='inputbox' value={bookQuery} onChange={bookSearch}></Form.Control>
         </Form.Group>
         </Form>
     )
