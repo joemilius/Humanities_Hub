@@ -42,7 +42,7 @@ function App() {
     <Router>
       <NavBar user={user} showSignUp={showSignUp} setShowSignUp={setShowSignUp} handleLogOut={handleLogout}/>
       {!user ?
-      <LoginPage showSignUp={showSignUp} setShowSignUp={setShowSignUp}/>
+      <LoginPage showSignUp={showSignUp} setShowSignUp={setShowSignUp} setUser={setUser}/>
       :
       <>
       <Switch>

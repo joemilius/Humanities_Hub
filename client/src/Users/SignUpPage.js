@@ -1,10 +1,10 @@
 import React from 'react'
 import SignUpForm from './SignUpForm'
 
-const SignUpPage = () => {
+const SignUpPage = ({setUser}) => {
     return (
         <div>
-            <SignUpForm />
+            <SignUpForm setUser={setUser}/>
         </div>
     )
 }
