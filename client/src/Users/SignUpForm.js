@@ -16,9 +16,28 @@ const SignUpForm = () => {
         })
     }
 
+    function signupSubmit(event) {
+        event.preventDefault()
+        fetch("/signup", {
+            method: "POST",
+            headers: {
+            "Content-Type": "Application/json"
+            },
+            body: JSON.stringify(signupData)
+        }).then((resp) => {
+            if (resp.ok) {
+                resp.json().then((user) => setUser(user));
+            } else {
+                resp.json().then((err) => {
+                    console.log(err)
+                    setErrors(err.errors)
+                });
+            }
+        })
+    }
 
     return (
-        <Form onSubmit={}>
+        <Form onSubmit={signupSubmit}>
             <Form.Group>
                 <Form.Label>First Name</Form.Label>
                 <Form.Control classname="inputbox" name="first_name" value={signupData.first_name} onChange={handleSignup}></Form.Control>
