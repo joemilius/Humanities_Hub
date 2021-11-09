@@ -13,8 +13,31 @@ const LoginForm = ({}) => {
         })
     }
 
+    function loginSubmit(e){
+        e.preventDefault()
+        fetch("/login",  {
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(loginData),
+        }).then((response) => {
+            if (response.ok) {
+                response.json()
+                .then((user) => {
+                    setUser(user)
+                });
+            } else {
+                response.json().then((err) => {
+                    console.log(err)
+                    // setErrors(err.errors)
+                });
+                }
+        });
+    }
+
     return (
-        <Form onSubmit={}>
+        <Form onSubmit={loginSubmit}>
             <Form.Group>
                 <Form.Label>Username</Form.Label>
                 <Form.Control className="inputbox" name="username" value={loginData.username} onChange={handleLogin}></Form.Control>
