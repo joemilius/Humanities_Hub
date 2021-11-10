@@ -8,6 +8,8 @@ const UserHome = ({user}) => {
             <h4>Frist Name: {user.profile.first_name}</h4>
             <h4>Last Name: {user.profile.last_name}</h4>
             <h4>Email: {user.profile.email}</h4>
+
+            {}
         </div>
     )
 }
