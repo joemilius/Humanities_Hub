@@ -2,7 +2,7 @@ import React from 'react'
 import LoginForm from './LoginForm'
 import SignUpPage from './SignUpPage'
 
-const LoginPage = ({showSignUp, setShowSignUp, setUser, setErrors}) => {
+const LoginPage = ({showSignUp, setShowSignUp, setUser, errors, setErrors}) => {
     return (
         <div>
             {!showSignUp ?
