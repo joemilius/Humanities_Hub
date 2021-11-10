@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 
-const SignUpForm = ({setUser}) => {
+const SignUpForm = ({setUser, setErrors}) => {
     const [signupData, setSignupData] = usestate({
         first_name: '',
         last_name: '',
@@ -30,7 +30,7 @@ const SignUpForm = ({setUser}) => {
             } else {
                 resp.json().then((err) => {
                     console.log(err)
-                    // setErrors(err.errors)
+                    setErrors(err.errors)
                 });
             }
         })

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 
-const LoginForm = ({}) => {
+const LoginForm = ({setUser, setErrors}) => {
     const {loginData, setLoginData} = useState({
         username: '',
         password: ''
@@ -30,7 +30,7 @@ const LoginForm = ({}) => {
             } else {
                 response.json().then((err) => {
                     console.log(err)
-                    // setErrors(err.errors)
+                    setErrors(err.errors)
                 });
                 }
         });

@@ -12,6 +12,7 @@ import './App.css';
 
 function App() {
   const [user, setUser] = useState([])
+  const [errors, setErrors] = useState([])
   const [movieList, setMovieList] = useState([])
   const [musicList, setMusicList] = useState([])
   const [bookList, setBookList] = useState([])
@@ -42,7 +43,7 @@ function App() {
     <Router>
       <NavBar user={user} showSignUp={showSignUp} setShowSignUp={setShowSignUp} handleLogOut={handleLogout}/>
       {!user ?
-      <LoginPage showSignUp={showSignUp} setShowSignUp={setShowSignUp} setUser={setUser}/>
+      <LoginPage showSignUp={showSignUp} setShowSignUp={setShowSignUp} setUser={setUser} setErrors={setErrors}/>
       :
       <>
       <Switch>
