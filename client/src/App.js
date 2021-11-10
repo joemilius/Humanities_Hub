@@ -43,11 +43,11 @@ function App() {
     <Router>
       <NavBar user={user} showSignUp={showSignUp} setShowSignUp={setShowSignUp} handleLogOut={handleLogout}/>
       {!user ?
-      <LoginPage showSignUp={showSignUp} setShowSignUp={setShowSignUp} setUser={setUser} setErrors={setErrors}/>
+      <LoginPage showSignUp={showSignUp} setShowSignUp={setShowSignUp} setUser={setUser} errors={errors} setErrors={setErrors}/>
       :
       <>
       <Switch>
-        <Route path="/" exact component={() => <UserHome/>}/>
+        <Route path="/" exact component={() => <UserHome user={user}/>}/>
       </Switch>
       <Switch>
         <Route path="/group" exact component={() => <GroupHome/>}/>
