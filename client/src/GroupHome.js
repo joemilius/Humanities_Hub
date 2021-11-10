@@ -43,20 +43,26 @@ const Home = () => {
             setBookResults(data)})
     }
     return (
+        <>
         <Form>
         <Form.Group>
             <Form.Label>Movie Search</Form.Label>
             <Form.Control className='inputbox' value={movieQuery} onChange={movieSearch}></Form.Control>
         </Form.Group>
+        </Form>
+        <Form>
         <Form.Group>
             <Form.Label>Music Search</Form.Label>
             <Form.Control className='inputbox' value={musicQuery} onChange={musicSearch}></Form.Control>
         </Form.Group>
+        </Form>
+        <Form>
         <Form.Group>
             <Form.Label>Book Search</Form.Label>
             <Form.Control className='inputbox' value={bookQuery} onChange={bookSearch}></Form.Control>
         </Form.Group>
         </Form>
+        </>
     )
 }
 
