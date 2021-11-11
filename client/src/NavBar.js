@@ -32,7 +32,7 @@ const NavBar = ({user, showSignup, setShowSignup, handleLogout}) => {
                             <NavLink className="navlinks" to="/activity-list">Activities</NavLink>
                         </Nav.Link>
                     </Nav>
-                    {user ?
+                    {!user ?
                     <Button classname='ms-auto' variant='flat' to='' onClick={() => setShowSignup(false)}>Login</Button>
                     :
                     <Button classname='ms-auto' variant='flat' onClick={handleLogout}>Logout</Button>
