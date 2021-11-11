@@ -1,6 +1,7 @@
 import React from 'react'
 
 const UserHome = ({user}) => {
+    function 
     return (
         <div>
             <h2>{user.username}</h2>

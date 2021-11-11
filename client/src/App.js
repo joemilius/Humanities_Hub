@@ -12,6 +12,7 @@ import './App.css';
 
 function App() {
   const [user, setUser] = useState([])
+  const [groups, setGroups] = useState([])
   const [errors, setErrors] = useState([])
   const [movieList, setMovieList] = useState([])
   const [musicList, setMusicList] = useState([])
