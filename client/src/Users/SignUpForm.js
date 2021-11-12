@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 
 const SignUpForm = ({setUser, setErrors}) => {
-    const [signupData, setSignupData] = usestate({
+    const [signupData, setSignupData] = useState({
         first_name: '',
         last_name: '',
         email: '',
