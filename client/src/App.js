@@ -20,7 +20,7 @@ function App() {
   const [showSignUp, setShowSignUp] = useState(false)
 
   useEffect(() => {
-    fetch("/me")
+    fetch("http://localhost:3000/me")
     .then((resp) => {
       if (resp.ok) {
         resp.json().then((user) => {
