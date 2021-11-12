@@ -48,7 +48,7 @@ function App() {
       :
       <>
       <Switch>
-        <Route path="/" exact component={() => <UserHome user={user}/>}/>
+        <Route path="/" exact component={() => <UserHome user={user} groups={groups} setGroups={setGroups}/>}/>
       </Switch>
       <Switch>
         <Route path="/group" exact component={() => <GroupHome/>}/>

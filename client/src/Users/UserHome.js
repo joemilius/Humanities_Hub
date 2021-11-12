@@ -1,7 +1,9 @@
 import React from 'react'
 
-const UserHome = ({user}) => {
-    function 
+const UserHome = ({user, groups, setGroups}) => {
+    function showGroups(){
+        fetch(`/`)
+    }
     return (
         <div>
             <h2>{user.username}</h2>
