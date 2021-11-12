@@ -12,6 +12,7 @@ import './App.css';
 
 function App() {
   const [user, setUser] = useState([])
+  const [groups, setGroups] = useState([])
   const [errors, setErrors] = useState([])
   const [movieList, setMovieList] = useState([])
   const [musicList, setMusicList] = useState([])
@@ -47,7 +48,7 @@ function App() {
       :
       <>
       <Switch>
-        <Route path="/" exact component={() => <UserHome user={user}/>}/>
+        <Route path="/" exact component={() => <UserHome user={user} groups={groups} setGroups={setGroups}/>}/>
       </Switch>
       <Switch>
         <Route path="/group" exact component={() => <GroupHome/>}/>
