@@ -11,9 +11,9 @@ const LoginPage = ({showSignUp, setShowSignUp, setUser, errors, setErrors}) => {
             :
             <SignUpPage setUser={setUser} setErrors={setErrors}/>
             }
-            {errors && errors.map((err) => (
-                <Errors key={err}>{err}</Errors>
-            ))}
+                <Errors>{errors}</Errors>
+            {/* {errors && errors.map((err) => (
+            ))} */}
         </div>
     )
 }
