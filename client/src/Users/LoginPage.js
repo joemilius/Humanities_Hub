@@ -1,6 +1,7 @@
 import React from 'react'
 import LoginForm from './LoginForm'
 import SignUpPage from './SignUpPage'
+import Errors from './Errors'
 
 const LoginPage = ({showSignUp, setShowSignUp, setUser, errors, setErrors}) => {
     return (

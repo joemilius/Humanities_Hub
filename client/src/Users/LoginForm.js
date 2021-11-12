@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 
-const LoginForm = ({setUser, setErrors}) => {
-    const {loginData, setLoginData} = useState({
-        username: '',
-        password: ''
+const LoginForm = ({setUser, setErrors, setShowSignUp}) => {
+    const [loginData, setLoginData] = useState({
+        username: "",
+        password: ""
     })
+    console.log(loginData)
 
     function handleLogin(event) {
         setLoginData({...loginData,
@@ -42,7 +43,7 @@ const LoginForm = ({setUser, setErrors}) => {
                 <Form.Label>Username</Form.Label>
                 <Form.Control className="inputbox" name="username" value={loginData.username} onChange={handleLogin}></Form.Control>
                 <Form.Label>Password</Form.Label>
-                <Form.Control className="inputBox" type="password" name="password" value={loginData.password} onChange={handleLogin}></Form.Control>
+                <Form.Control className="inputbox" type="password" name="password" value={loginData.password} onChange={handleLogin}></Form.Control>
             </Form.Group>
             <Button variant='custom' type='submit'>Login</Button>
             <Button variant='custom' onClick={()=> setShowSignUp(true)}>Sign Up</Button>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import NavBar from './NavBar'
 import LoginPage from './Users/LoginPage'
@@ -11,13 +11,13 @@ import ActivityHome from './Activities/ActivityHome'
 import './App.css';
 
 function App() {
-  const [user, setUser] = useState([])
+  const [user, setUser] = useState(null)
   const [groups, setGroups] = useState([])
   const [errors, setErrors] = useState([])
   const [movieList, setMovieList] = useState([])
   const [musicList, setMusicList] = useState([])
   const [bookList, setBookList] = useState([])
-  const [showSignup, setShowSignUp] = useState(false)
+  const [showSignUp, setShowSignUp] = useState(false)
 
   useEffect(() => {
     fetch("/me")
