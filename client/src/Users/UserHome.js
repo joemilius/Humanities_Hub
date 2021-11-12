@@ -1,14 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Button from 'react-bootstrap'
 
 const UserHome = ({user, groups, setGroups}) => {
-    console.log(user)
-    function showGroups(){
+    const [allUsers, setAllUsers] = useState([])
+    
+    function groupList(){
         fetch(`/groups`)
         .then(response => response.json())
         .then(data => {
             console.log(data)
             setGroups(data)
         })
+    }
+
+    function userList(){
+        fetch(`http://localhost:3000/users`)
+        .then(response => response.json())
+        .then(data => setAllUsers(data))
     }
     return (
         <div>
@@ -17,6 +25,10 @@ const UserHome = ({user, groups, setGroups}) => {
             <h4>First Name: {user.first_name}</h4>
             <h4>Last Name: {user.last_name}</h4>
             <h4>Email: {user.email}</h4>
+
+            <div>
+                <Button onClick={}></Button>
+            </div>
 
             {groups ?
             groups.map(group => {                return (
