@@ -3,8 +3,8 @@ import Button from 'react-bootstrap'
 
 const UserHome = ({user, groups, setGroups}) => {
     const [allUsers, setAllUsers] = useState([])
-    console.log(user)
-    function showGroups(){
+    
+    function groupList(){
         fetch(`/groups`)
         .then(response => response.json())
         .then(data => {
