@@ -27,7 +27,14 @@ const UserHome = ({user, groups, setGroups}) => {
             <h4>Email: {user.email}</h4>
 
             <div>
-                <Button onClick={}></Button>
+                <Button onClick={userList}> Get Users</Button>
+            {allUsers.map(user => {
+                return (
+                    <div>
+                        <Button>{user.username}</Button>
+                    </div>
+                )
+            })}
             </div>
 
             {groups ?
