@@ -22,8 +22,10 @@ const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
         .then(data => setAllUsers(data))
     }
 
-    function handleCreateGroup(){
-        
+    function handleCreateGroup(event){
+        setCreateGroup({...createGroup,
+            [event.target.name] : event.target.value
+        })
     }
 
     function createGroup(){
@@ -67,7 +69,7 @@ const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
             <div>
                 <Form>
                     <Form.Label>Group Name</Form.Label>
-                    <Form.Control classname='inputbox' name='groupname' value={handleCreateGroup} ></Form.Control>
+                    <Form.Control classname='inputbox' name='group_name' value={handleCreateGroup} ></Form.Control>
                     <Button onClick={}>Create Group</Button>
                 </Form>
             </div>
