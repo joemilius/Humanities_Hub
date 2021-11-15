@@ -36,6 +36,8 @@ const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
             },
             body: JSON.stringify(createGroup)
         })
+        .then(response => response.json())
+        .then(data => setMyGroups(data))
 
     }
     return (
