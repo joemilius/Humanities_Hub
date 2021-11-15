@@ -38,7 +38,13 @@ const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
             </div>
             <div>
                 <Button onClick={getPublicGroups}>Get Groups</Button>
-
+                {allPublicGroups.map(group => {
+                return (
+                    <div>
+                        <Button>{group.group_name}</Button>
+                    </div>
+                )
+            })}
             </div>
 
             {groups ?
