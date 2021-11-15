@@ -3,7 +3,7 @@ import {Button, Form} from 'react-bootstrap'
 
 const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
     const [allUsers, setAllUsers] = useState([])
-    const [createGroup, setCreateGroup] = useState({
+    const [newGroup, setNewGroup] = useState({
         group_name: ''
     })
     
@@ -23,18 +23,18 @@ const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
     }
 
     function handleCreateGroup(event){
-        setCreateGroup({...createGroup,
+        setNewGroup({...newGroup,
             [event.target.name] : event.target.value
         })
     }
 
-    function createGroup(){
+    function submitCreateGroup(){
         fetch(`http://localhost:3000/groups`, {
             method: 'POST',
             headers: {
                 "Content-Type": "Application/json"
             },
-            body: JSON.stringify(createGroup)
+            body: JSON.stringify(newGroup)
         })
         .then(response => response.json())
         .then(data => setMyGroups(data))
@@ -69,10 +69,10 @@ const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
             })}
             </div>
             <div>
-                <Form>
+                <Form onSubmit={submitCreateGroup}>
                     <Form.Label>Group Name</Form.Label>
-                    <Form.Control classname='inputbox' name='group_name' value={handleCreateGroup} ></Form.Control>
-                    <Button onClick={}>Create Group</Button>
+                    <Form.Control classname='inputbox' name='group_name' value={newGroup.group_name} onChange={handleCreateGroup}></Form.Control>
+                    <Button>Create Group</Button>
                 </Form>
             </div>
 
