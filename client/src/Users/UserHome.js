@@ -75,11 +75,24 @@ const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
                     <Button>Create Group</Button>
                 </Form>
             </div>
-
-            {groups ?
-            groups.map(group => {                return (
-                    <button>{group.group_name}</button>
-                )}): null}
+            <div>
+                {user.invitations.map(invitation => {
+                    return (
+                        <>
+                            <p>{invitation.group.group_name}</p>
+                        </>
+                    )
+                })}
+            </div>
+            <div>
+                {user.memberships.map(membership => {
+                    return (
+                        <>
+                            <p>{membership.group.group_name}</p>
+                        </>
+                    )
+                })}
+            </div>
         </div>
     )
 }
