@@ -1,8 +1,8 @@
 class GroupsController < ApplicationController
     wrap_parameters format: []
-    
+
     def index
-        groups = Group.all.where(public: true)
+        groups = Group.where(public: true)
         render json: groups, status: :ok
     end
 
