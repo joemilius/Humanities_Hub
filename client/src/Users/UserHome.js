@@ -4,7 +4,8 @@ import {Button, Form} from 'react-bootstrap'
 const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
     const [allUsers, setAllUsers] = useState([])
     const [newGroup, setNewGroup] = useState({
-        group_name: ''
+        group_name: '',
+        public: ''
     })
     
     function getPublicGroups(){
@@ -60,38 +61,42 @@ const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
             </div>
             <div>
                 <Button onClick={getPublicGroups}>Get Groups</Button>
-                {allPublicGroups.map(group => {
+                {/* {allPublicGroups.map(group => {
                 return (
                     <div>
                         <Button>{group.group_name}</Button>
                     </div>
                 )
-            })}
+            })} */}
             </div>
             <div>
                 <Form onSubmit={submitCreateGroup}>
                     <Form.Label>Group Name</Form.Label>
                     <Form.Control classname='inputbox' name='group_name' value={newGroup.group_name} onChange={handleCreateGroup}></Form.Control>
+                    <DropdownButton id="dropdown-basic-button" title="Is It Public?">
+                        <Dropdown.Item >Public</Dropdown.Item>
+                        <Dropdown.Item >Private</Dropdown.Item>
+                    </DropdownButton>
                     <Button>Create Group</Button>
                 </Form>
             </div>
             <div>
-                {user.invitations.map(invitation => {
+                {/* {user.invitations.map(invitation => {
                     return (
                         <>
                             <p>{invitation.group.group_name}</p>
                         </>
                     )
-                })}
+                })} */}
             </div>
             <div>
-                {user.memberships.map(membership => {
+                {/* {user.memberships.map(membership => {
                     return (
                         <>
                             <p>{membership.group.group_name}</p>
                         </>
                     )
-                })}
+                })} */}
             </div>
         </div>
     )
