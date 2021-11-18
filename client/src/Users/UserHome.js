@@ -73,9 +73,9 @@ const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
                 <Form onSubmit={submitCreateGroup}>
                     <Form.Label>Group Name</Form.Label>
                     <Form.Control classname='inputbox' name='group_name' value={newGroup.group_name} onChange={handleCreateGroup}></Form.Control>
-                    <DropdownButton id="dropdown-basic-button" title="Is It Public?">
-                        <Dropdown.Item >Public</Dropdown.Item>
-                        <Dropdown.Item >Private</Dropdown.Item>
+                    <DropdownButton id="dropdown-basic-button" title="Is It Public?" onChange={handleCreateGroup}>
+                        <Dropdown.Item value={true}>Public</Dropdown.Item>
+                        <Dropdown.Item value={false}>Private</Dropdown.Item>
                     </DropdownButton>
                     <Button>Create Group</Button>
                 </Form>
