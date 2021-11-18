@@ -6,4 +6,6 @@ class Group < ApplicationRecord
     has_many :musics
     has_many :books
     has_many :activities
+
+    validates :group_name, presence: true, uniquness: true
 end
