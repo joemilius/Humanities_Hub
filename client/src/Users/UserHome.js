@@ -5,7 +5,11 @@ const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
     const [allUsers, setAllUsers] = useState([])
     const [newGroup, setNewGroup] = useState({
         group_name: '',
-        public: ''
+        public: '',
+        membership_attributes: {
+            user_id: user.id,
+            admin: true
+        }
     })
     
     function getPublicGroups(){
