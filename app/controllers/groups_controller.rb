@@ -1,7 +1,6 @@
 class GroupsController < ApplicationController
     wrap_parameters format: []
 
-    after_action: create_membership, only: [create]
 
     def index
         groups = Group.where(public: true)
@@ -20,11 +19,7 @@ class GroupsController < ApplicationController
     private
 
     def group_params
-        params.permit(:group_name, :public)
-    end
-
-    def create_membership
-
+        params.permit(:group_name, :public, :membership_attributes [:user_id, :admin])
     end
 
 end
