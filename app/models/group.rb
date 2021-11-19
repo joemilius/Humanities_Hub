@@ -7,5 +7,7 @@ class Group < ApplicationRecord
     has_many :books
     has_many :activities
 
+    accepts_nested_attributes_for :membership
+
     validates :group_name, presence: true, uniquness: true
 end
