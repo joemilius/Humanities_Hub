@@ -5,7 +5,11 @@ const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
     const [allUsers, setAllUsers] = useState([])
     const [newGroup, setNewGroup] = useState({
         group_name: '',
-        public: ''
+        public: '',
+        membership_attributes: {
+            user_id: user.id,
+            admin: true
+        }
     })
     
     function getPublicGroups(){
@@ -74,8 +78,8 @@ const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
                     <Form.Label>Group Name</Form.Label>
                     <Form.Control classname='inputbox' name='group_name' value={newGroup.group_name} onChange={handleCreateGroup}></Form.Control>
                     <DropdownButton id="dropdown-basic-button" title="Is It Public?" onChange={handleCreateGroup}>
-                        <Dropdown.Item value={true}>Public</Dropdown.Item>
-                        <Dropdown.Item value={false}>Private</Dropdown.Item>
+                        <Dropdown.Item name='public' value={true}>Public</Dropdown.Item>
+                        <Dropdown.Item name='public' value={false}>Private</Dropdown.Item>
                     </DropdownButton>
                     <Button>Create Group</Button>
                 </Form>
