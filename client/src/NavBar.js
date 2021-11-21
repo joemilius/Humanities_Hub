@@ -4,6 +4,7 @@ import {Container, Nav, Button, NavDropdown} from 'react-bootstrap'
 import {NavLink} from 'react-router-dom'
 
 const NavBar = ({user, showSignUp, setShowSignUp, handleLogout}) => {
+    
     return (
         <Navbar className="navbar-static-top" bg="light" expand="lg" variant="primary">
             <Container>

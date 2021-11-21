@@ -11,6 +11,7 @@ const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
             admin: true
         }
     })
+    console.log(newGroup)
     
     function getPublicGroups(){
         fetch(`/groups`)

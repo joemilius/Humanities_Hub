@@ -19,6 +19,8 @@ function App() {
   const [bookList, setBookList] = useState([])
   const [showSignUp, setShowSignUp] = useState(false)
 
+  console.log(user)
+
   useEffect(() => {
     fetch("http://localhost:3000/me")
     .then((resp) => {
