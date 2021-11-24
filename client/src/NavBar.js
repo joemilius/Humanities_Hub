@@ -4,7 +4,7 @@ import {Container, Nav, Button, NavDropdown} from 'react-bootstrap'
 import {NavLink} from 'react-router-dom'
 
 const NavBar = ({user, showSignUp, setShowSignUp, handleLogout}) => {
-    
+
     return (
         <Navbar className="navbar-static-top" bg="light" expand="lg" variant="primary">
             <Container>
@@ -18,7 +18,9 @@ const NavBar = ({user, showSignUp, setShowSignUp, handleLogout}) => {
                             <NavLink className="navlinks" to="/">Home</NavLink>
                         </Nav.Link>
                         <NavDropdown title="Link" id="navbarScrollingDropdown">
-                            <NavDropdown.Item to="/group">Group</NavDropdown.Item>
+                            {user.memberships ? user.memberships.groups.map(group => {
+                            return(
+                            <NavDropdown.Item id={group.id}>{group.group_name}</NavDropdown.Item>)}) : null}
                         </NavDropdown>
                         <Nav.Link className="navbarclicks">
                             <NavLink className="navlinks" to="/movie-list">Movies</NavLink>
