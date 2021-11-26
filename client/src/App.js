@@ -12,6 +12,7 @@ import './App.css';
 
 function App() {
   const [user, setUser] = useState(null)
+  const [currentGroup, setCurrentGroup] = useState([])
   const [allPublicGroups, setAllPublicGroups] = useState([])
   const [errors, setErrors] = useState([])
   const [movieList, setMovieList] = useState([])
@@ -44,7 +45,7 @@ function App() {
 
   return (
     <Router>
-      <NavBar user={user} showSignUp={showSignUp} setShowSignUp={setShowSignUp} handleLogOut={handleLogout}/>
+      <NavBar user={user} showSignUp={showSignUp} setShowSignUp={setShowSignUp} setCurrentGroup={setCurrentGroup} handleLogOut={handleLogout}/>
       {!user ?
       <LoginPage showSignUp={showSignUp} setShowSignUp={setShowSignUp} setUser={setUser} errors={errors} setErrors={setErrors}/>
       :
