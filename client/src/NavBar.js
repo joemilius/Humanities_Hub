@@ -3,7 +3,13 @@ import Navbar from 'react-bootstrap/Navbar'
 import {Container, Nav, Button, NavDropdown} from 'react-bootstrap'
 import {NavLink} from 'react-router-dom'
 
-const NavBar = ({user, showSignUp, setShowSignUp, handleLogout}) => {
+const NavBar = ({user, showSignUp, setShowSignUp, setCurrentGroup, handleLogout}) => {
+
+    function handleCurrentGroup(event){
+        fetch(`/groups/${event.target.id}`)
+        .then(response => response.json())
+        .then(data => setCurrentGroup(data))
+    }
 
     return (
         <Navbar className="navbar-static-top" bg="light" expand="lg" variant="primary">
@@ -17,10 +23,11 @@ const NavBar = ({user, showSignUp, setShowSignUp, handleLogout}) => {
                         <Nav.Link className="navbarclicks">
                             <NavLink className="navlinks" to="/">Home</NavLink>
                         </Nav.Link>
-                        <NavDropdown title="Link" id="navbarScrollingDropdown">
+                        <NavDropdown title="Link" id="navbarScrollingDropdown" onChange={handleCurrentGroup}>
                             {user.memberships ? user.memberships.groups.map(group => {
                             return(
-                            <NavDropdown.Item id={group.id}>{group.group_name}</NavDropdown.Item>)}) : null}
+                            <NavDropdown.Item id={group.id}>{group.group_name}</NavDropdown.Item>)}) 
+                            : null}
                         </NavDropdown>
                         <Nav.Link className="navbarclicks">
                             <NavLink className="navlinks" to="/movie-list">Movies</NavLink>
