@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MusicList = () => {
+const MusicList = ({currentGroup}) => {
     return (
         <div>
             <p>Music</p>

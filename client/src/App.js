@@ -54,19 +54,19 @@ function App() {
         <Route path="/" exact component={() => <UserHome user={user} allPublicGroups={allPublicGroups} setAllPublicGroups={setAllPublicGroups}/>}/>
       </Switch>
       <Switch>
-        <Route path="/group" exact component={() => <GroupHome/>}/>
+        <Route path="/group" exact component={() => <GroupHome currentGroup={currentGroup}/>}/>
       </Switch>
       <Switch>
-        <Route path="/movie-list" exact component={() => <MovieList/>}/>
+        <Route path="/movie-list" exact component={() => <MovieList currentGroup={currentGroup}/>}/>
       </Switch>
       <Switch>
-        <Route path="/music-list" exact component={() => <MusicList/>}/>
+        <Route path="/music-list" exact component={() => <MusicList currentGroup={currentGroup}/>}/>
       </Switch>
       <Switch>
-        <Route path="/book-list" exact component={() => <BookList/>}/>
+        <Route path="/book-list" exact component={() => <BookList currentGroup={currentGroup}/>}/>
       </Switch>
       <Switch>
-        <Route path="/activity-list" exact component={() => <ActivityHome/>}/>
+        <Route path="/activity-list" exact component={() => <ActivityHome currentGroup={currentGroup}/>}/>
       </Switch>
       </>
       }

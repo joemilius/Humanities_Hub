@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MovieList = () => {
+const MovieList = ({currentGroup}) => {
     return (
         <div>
             <p>Movies</p>

@@ -1,9 +1,10 @@
 import React from 'react'
+import ActivityCard from './ActivityCard'
 
-const ActivityList = () => {
+const ActivityList = ({currentGroup}) => {
     return (
         <div>
-            <p>Activities</p>
+            <ActivityCard currentGroup={currentGroup}/>
         </div>
     )
 }

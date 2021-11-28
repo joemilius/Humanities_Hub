@@ -1,10 +1,12 @@
 import React from 'react'
 import ActivityList from './ActivityList'
+import ActivitiyForm from './ActivityForm'
 
-const ActivityHome = () => {
+const ActivityHome = (currentGroup) => {
     return (
         <div>
-            <ActivityList />
+            <ActivityForm />
+            <ActivityList currentGroup={currentGroup}/>
         </div>
     )
 }
