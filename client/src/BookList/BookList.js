@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BookList = () => {
+const BookList = ({currentGroup}) => {
     return (
         <div>
             <p>Books</p>
