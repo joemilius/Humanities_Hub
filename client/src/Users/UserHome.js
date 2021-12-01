@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Button, Form} from 'react-bootstrap'
 
-const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
+const UserHome = ({user, userGroups, setUserGroups, allPublicGroups, setAllPublicGroups}) => {
     const [allUsers, setAllUsers] = useState([])
     const [newGroup, setNewGroup] = useState({
         group_name: '',
@@ -43,7 +43,7 @@ const UserHome = ({user, allPublicGroups, setAllPublicGroups}) => {
             body: JSON.stringify(newGroup)
         })
         .then(response => response.json())
-        .then(data => setMyGroups(data))
+        .then(data => setUserGroups(...userGroups, data))
 
     }
     return (
