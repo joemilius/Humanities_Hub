@@ -13,6 +13,7 @@ import './App.css';
 function App() {
   const [user, setUser] = useState(null)
   const [currentGroup, setCurrentGroup] = useState([])
+  const [userGroups, setUserGroups] = userState([])
   const [allPublicGroups, setAllPublicGroups] = useState([])
   const [errors, setErrors] = useState([])
   const [movieList, setMovieList] = useState([])
@@ -28,6 +29,7 @@ function App() {
       if (resp.ok) {
         resp.json().then((user) => {
           setUser(user)
+          setUserGroups(user.groups)
         });
       }
     })
@@ -51,7 +53,7 @@ function App() {
       :
       <>
       <Switch>
-        <Route path="/" exact component={() => <UserHome user={user} allPublicGroups={allPublicGroups} setAllPublicGroups={setAllPublicGroups}/>}/>
+        <Route path="/" exact component={() => <UserHome user={user} userGroups={userGroups} setUserGroups={setUserGroups} allPublicGroups={allPublicGroups} setAllPublicGroups={setAllPublicGroups}/>}/>
       </Switch>
       <Switch>
         <Route path="/group" exact component={() => <GroupHome currentGroup={currentGroup}/>}/>
