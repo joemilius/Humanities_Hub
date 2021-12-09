@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
-import {Button, Form} from 'react-bootstrap'
+import {Button, Form, DropdownButton, Dropdown} from 'react-bootstrap'
 
 const UserHome = ({user, userGroups, setUserGroups, allPublicGroups, setAllPublicGroups}) => {
     const [allUsers, setAllUsers] = useState([])
+    const [showGroupForm, setShowCreateGroupForm] = useState(false)
     const [newGroup, setNewGroup] = useState({
         group_name: '',
         public: '',
@@ -14,7 +15,7 @@ const UserHome = ({user, userGroups, setUserGroups, allPublicGroups, setAllPubli
     console.log(newGroup)
     
     function getPublicGroups(){
-        fetch(`/groups`)
+        fetch(`http://localhost:3000/groups`)
         .then(response => response.json())
         .then(data => {
             console.log(data)
@@ -34,6 +35,13 @@ const UserHome = ({user, userGroups, setUserGroups, allPublicGroups, setAllPubli
         })
     }
 
+    function handleGroupPublic(event){
+        console.log(event.target.value)
+        setNewGroup({...newGroup,
+            [event.target.name] : event.target.value
+        })
+    }
+
     function submitCreateGroup(){
         fetch(`http://localhost:3000/groups`, {
             method: 'POST',
@@ -43,7 +51,10 @@ const UserHome = ({user, userGroups, setUserGroups, allPublicGroups, setAllPubli
             body: JSON.stringify(newGroup)
         })
         .then(response => response.json())
-        .then(data => setUserGroups(...userGroups, data))
+        .then(data => {
+            setUserGroups(...userGroups, data)
+            console.log(userGroups)
+            })
 
     }
     return (
@@ -78,11 +89,27 @@ const UserHome = ({user, userGroups, setUserGroups, allPublicGroups, setAllPubli
                 <Form onSubmit={submitCreateGroup}>
                     <Form.Label>Group Name</Form.Label>
                     <Form.Control classname='inputbox' name='group_name' value={newGroup.group_name} onChange={handleCreateGroup}></Form.Control>
-                    <DropdownButton id="dropdown-basic-button" name='public' title="Is It Public?" onChange={handleCreateGroup}>
-                        <Dropdown.Item value={true}>Public</Dropdown.Item>
-                        <Dropdown.Item value={false}>Private</Dropdown.Item>
-                    </DropdownButton>
-                    <Button>Create Group</Button>
+                    <div key={`inline-radio`} className="mb-3" >
+                    <Form.Check
+                        inline
+                        label="Public"
+                        value={true}
+                        name='public'
+                        type="radio"
+                        id={`inline-checkbox-1`}
+                        onChange={handleGroupPublic}
+                    />
+                    <Form.Check
+                        inline
+                        label="Private"
+                        value={false}
+                        name='public'
+                        type="radio"
+                        id={`inline-checkbox-2`}
+                        onChange={handleGroupPublic}
+                    />
+                    </div>
+                    <Button type='submit'>Create Group</Button>
                 </Form>
             </div>
             <div>

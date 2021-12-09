@@ -23,11 +23,11 @@ const NavBar = ({user, showSignUp, setShowSignUp, setCurrentGroup, handleLogout}
                         <Nav.Link className="navbarclicks">
                             <NavLink className="navlinks" to="/">Home</NavLink>
                         </Nav.Link>
-                        <NavDropdown title="Link" id="navbarScrollingDropdown" onChange={handleCurrentGroup}>
-                            {user.memberships ? user.memberships.groups.map(group => {
+                        <NavDropdown title="Groups" id="navbarScrollingDropdown" onChange={handleCurrentGroup}>
+                            {/* {user.memberships ? user.memberships.groups.map(group => {
                             return(
                             <NavDropdown.Item id={group.id}>{group.group_name}</NavDropdown.Item>)}) 
-                            : null}
+                            : null} */}
                         </NavDropdown>
                         <Nav.Link className="navbarclicks">
                             <NavLink className="navlinks" to="/movie-list">Movies</NavLink>

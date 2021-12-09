@@ -13,7 +13,7 @@ import './App.css';
 function App() {
   const [user, setUser] = useState(null)
   const [currentGroup, setCurrentGroup] = useState([])
-  const [userGroups, setUserGroups] = userState([])
+  const [userGroups, setUserGroups] = useState([])
   const [allPublicGroups, setAllPublicGroups] = useState([])
   const [errors, setErrors] = useState([])
   const [movieList, setMovieList] = useState([])
@@ -36,7 +36,7 @@ function App() {
   }, []);
 
   function handleLogout() {
-    fetch("/logout", { 
+    fetch("http://localhost:3000/logout", { 
       method: "DELETE"})
       .then((resp) => {
       if (resp.ok) {
