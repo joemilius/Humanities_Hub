@@ -1,6 +1,6 @@
 import React from 'react'
 import ActivityList from './ActivityList'
-import ActivitiyForm from './ActivityForm'
+import ActivityForm from './ActivityForm'
 
 const ActivityHome = (currentGroup) => {
     return (
