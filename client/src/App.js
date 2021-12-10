@@ -22,6 +22,7 @@ function App() {
   const [showSignUp, setShowSignUp] = useState(false)
 
   console.log(user)
+  console.log(userGroups)
 
   useEffect(() => {
     fetch("http://localhost:3000/me")
@@ -49,7 +50,7 @@ function App() {
     <Router>
       <NavBar user={user} showSignUp={showSignUp} setShowSignUp={setShowSignUp} setCurrentGroup={setCurrentGroup} handleLogOut={handleLogout}/>
       {!user ?
-      <LoginPage showSignUp={showSignUp} setShowSignUp={setShowSignUp} setUser={setUser} errors={errors} setErrors={setErrors}/>
+      <LoginPage showSignUp={showSignUp} setShowSignUp={setShowSignUp} setUser={setUser} setUserGroups={setUserGroups} errors={errors} setErrors={setErrors}/>
       :
       <>
       <Switch>

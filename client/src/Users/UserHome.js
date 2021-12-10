@@ -97,7 +97,7 @@ const UserHome = ({user, userGroups, setUserGroups, allPublicGroups, setAllPubli
                         name='public'
                         type="radio"
                         id={`inline-checkbox-1`}
-                        onChange={handleGroupPublic}
+                        onChange={handleCreateGroup}
                     />
                     <Form.Check
                         inline
@@ -106,7 +106,7 @@ const UserHome = ({user, userGroups, setUserGroups, allPublicGroups, setAllPubli
                         name='public'
                         type="radio"
                         id={`inline-checkbox-2`}
-                        onChange={handleGroupPublic}
+                        onChange={handleCreateGroup}
                     />
                     </div>
                     <Button type='submit'>Create Group</Button>

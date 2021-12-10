@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
         render json: groups, status: :ok
         else
             render json: {error: groups.errors.full_messages}, status: :unprocessable_entity
+        end
     end
 
     def create
@@ -22,7 +23,7 @@ class GroupsController < ApplicationController
     private
 
     def group_params
-        params.permit(:group_name, :public, :membership_attributes [:user_id, :admin])
+        params.permit(:group_name, :public, membership_attributes: [:user_id, :admin])
     end
 
 end
