@@ -9,5 +9,5 @@ class Group < ApplicationRecord
 
     accepts_nested_attributes_for :membership
 
-    validates :group_name, presence: true, uniquness: true
+    validates :group_name, presence: true, uniqueness: true
 end
