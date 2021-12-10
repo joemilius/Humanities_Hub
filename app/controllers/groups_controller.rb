@@ -14,7 +14,7 @@ class GroupsController < ApplicationController
     def create
         group = Group.create(group_params)
         if group.valid?
-            render json: user, status: :created
+            render json: group, status: :created
         else
             render json: { error: group.errors.full_messages }, status: :unprocessable_entity
         end
@@ -23,7 +23,7 @@ class GroupsController < ApplicationController
     private
 
     def group_params
-        params.permit(:group_name, :public, membership_attributes: [:user_id, :admin])
+        params.permit(:group_name, :public, memberships_attributes: [:user_id, :admin])
     end
 
 end

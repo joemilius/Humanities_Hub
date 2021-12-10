@@ -7,7 +7,7 @@ const UserHome = ({user, userGroups, setUserGroups, allPublicGroups, setAllPubli
     const [newGroup, setNewGroup] = useState({
         group_name: '',
         public: '',
-        membership_attributes: {
+        memberships_attributes: {
             user_id: user.id,
             admin: true
         }
