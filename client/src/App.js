@@ -39,11 +39,12 @@ function App() {
   function handleLogout() {
     fetch("http://localhost:3000/logout", { 
       method: "DELETE"})
-      .then((resp) => {
-      if (resp.ok) {
-        setUser(null);
-      }
-    })
+      // .then((resp) => {
+      // if (resp.ok) {
+      //   setUser(null);
+      // }
+    // })
+    setUser(null)
   }
 
   return (
