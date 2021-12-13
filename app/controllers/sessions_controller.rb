@@ -10,12 +10,11 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        session.destroy
-        # if session[:user_id]
-        #     session.destroy
-        #     head :no_content
-        # else
-        #     render json: { error: ["Not logged in"] }, status: :unauthorized
-        # end
+        if session[:user_id]
+            session.destroy
+            head :no_content
+        else
+            render json: { error: ["Not logged in"] }, status: :unauthorized
+        end
     end
 end
