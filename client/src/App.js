@@ -39,17 +39,16 @@ function App() {
   function handleLogout() {
     fetch("http://localhost:3000/logout", { 
       method: "DELETE"})
-      // .then((resp) => {
-      // if (resp.ok) {
-      //   setUser(null);
-      // }
-    // })
-    setUser(null)
+      .then((resp) => {
+      if (resp.ok) {
+        setUser(null);
+      }
+    })
   }
 
   return (
     <Router>
-      <NavBar user={user} showSignUp={showSignUp} setShowSignUp={setShowSignUp} setCurrentGroup={setCurrentGroup} handleLogOut={handleLogout}/>
+      <NavBar user={user} showSignUp={showSignUp} setShowSignUp={setShowSignUp} setCurrentGroup={setCurrentGroup} handleLogout={handleLogout}/>
       {!user ?
       <LoginPage showSignUp={showSignUp} setShowSignUp={setShowSignUp} setUser={setUser} setUserGroups={setUserGroups} errors={errors} setErrors={setErrors}/>
       :
