@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import NavBar from './NavBar'
 import LoginPage from './Users/LoginPage'
 import UserHome from './Users/UserHome'
@@ -27,6 +27,7 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:3000/me")
     .then((resp) => {
+      console.log(resp)
       if (resp.ok) {
         resp.json().then((user) => {
           setUser(user)
@@ -53,24 +54,14 @@ function App() {
       <LoginPage showSignUp={showSignUp} setShowSignUp={setShowSignUp} setUser={setUser} setUserGroups={setUserGroups} errors={errors} setErrors={setErrors}/>
       :
       <>
-      <Switch>
-        <Route path="/" exact component={() => <UserHome user={user} userGroups={userGroups} setUserGroups={setUserGroups} allPublicGroups={allPublicGroups} setAllPublicGroups={setAllPublicGroups}/>}/>
-      </Switch>
-      <Switch>
-        <Route path="/group" exact component={() => <GroupHome currentGroup={currentGroup}/>}/>
-      </Switch>
-      <Switch>
-        <Route path="/movie-list" exact component={() => <MovieList currentGroup={currentGroup}/>}/>
-      </Switch>
-      <Switch>
-        <Route path="/music-list" exact component={() => <MusicList currentGroup={currentGroup}/>}/>
-      </Switch>
-      <Switch>
-        <Route path="/book-list" exact component={() => <BookList currentGroup={currentGroup}/>}/>
-      </Switch>
-      <Switch>
-        <Route path="/activity-list" exact component={() => <ActivityHome currentGroup={currentGroup}/>}/>
-      </Switch>
+      <Routes>
+        <Route path="/" exact element={<UserHome user={user} userGroups={userGroups} setUserGroups={setUserGroups} allPublicGroups={allPublicGroups} setAllPublicGroups={setAllPublicGroups}/>}/>
+        <Route path="/group" exact element={<GroupHome currentGroup={currentGroup}/>}/>
+        <Route path="/movie-list" exact element={<MovieList currentGroup={currentGroup}/>}/>
+        <Route path="/music-list" exact element={<MusicList currentGroup={currentGroup}/>}/>
+        <Route path="/book-list" exact element={<BookList currentGroup={currentGroup}/>}/>
+        <Route path="/activity-list" exact element={<ActivityHome currentGroup={currentGroup}/>}/>
+      </Routes>
       </>
       }
     </Router>

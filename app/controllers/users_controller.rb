@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
 
     def show
+        
         user = User.find_by(id: session[:user_id])
         if user
             render json: user, status: :ok
@@ -29,6 +30,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:first_name, :last_name, :email, :username, :password)
+        params.permit(:id, :first_name, :last_name, :email, :username, :password)
     end
 end
